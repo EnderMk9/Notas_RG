@@ -1,2 +1,17 @@
 \section{Tensores}
-Hola
+\subsection{Convenio de sumación de Einstein}
+Antes de comenzar conviene explicar el \textbf{convenio de sumación de Einstein}, que nos va a permitir escribir expresiones de forma compacta que utilizando el símbolo de sumatorio, $\sum$, serían muy largas.
+
+Tomemos por ejemplo un vector $\vec{v}$ expresado en función de una base $e_i$, con componentes $v^i$, donde $i$ no es un exponente, sino un superíndice, esta elección es la clave del criterio.
+
+\[\vec{v}=\sum_{i=1}^n{v^i e_i}=\sum{v^i e_i}\equiv v^i e_i\]
+
+Para poder aplicar el criterio tenemos que tener claro cuales son los posibles valores que puede tomar el índice, en este caso, desde 1 hasta la dimensión del espacio vectorial.
+
+La clave está en que cuando tenemos un superíndice y un súbindice iguales en un mismo término, esto indica una suma con respecto a ese índice, denominado \textbf{índice mudo}, porque solo indica la suma.
+
+Otro ejemplo es aplicado a formas bilineales o transformaciones lineales, los detalles se detallan posteriormente.
+\[\phi(\vec{v},\vec{w})=A_{ij} v^i w^j \;\;\;\;\; {f(\vec{v})}^j={M^j}_i v^i\]
+Se observa también que en una ecuación los índices no mudos a ambos lados deben coincidir.
+\subsection{Covarianza y Contravarianza}
+Las componentes de un vector de un espacio vectorial $V$ se indican con un superíndice, mientras que los vectores de la base con un subíndice. Por el contrario, las componentes de un vector de $V^*$, el dual, se indican con un subíndice y la base dual se indica con superíndices.
