@@ -73,21 +73,21 @@ Utilizando una operación llamada \textbf{producto tensorial}, podemos crear mul
 \lrg{\[\mathcal{T} = V^1 \otimes \dots \otimes V^k \;\;\;\; \; V^i = \{V\mbox{ o }V^*\}\]}
 Al igual que en el caso anterior podemos tener cualquier combinación, pero vamos a centrarnos en la siguiente y generalizaremos
 \lrg{\[\mathcal{T}=V \otimes V\]}
-En este caso, la base de \lrg{$\mathcal{T}$} serán los elementos abstractos \lrg{$\{\bm{e}_i \oplus \bm{e}_j\}$}, de los cuales en este caso habrá \lrg{$n^2$}. Entonces podremos expresar cualquier elemento \lrg{$\mathbb{T} \in \mathcal{T}$} como una combinación lineal de esa base, \lrg{$\mathbb{T} = T^{ij} \ \bm{e}_i \oplus \bm{e}_j$}
+En este caso, la base de \lrg{$\mathcal{T}$} serán los elementos abstractos \lrg{$\{\bm{e}_i \otimes \bm{e}_j\}$}, de los cuales en este caso habrá \lrg{$n^2$}. Entonces podremos expresar cualquier elemento \lrg{$\mathbb{T} \in \mathcal{T}$} como una combinación lineal de esa base, \lrg{$\mathbb{T} = T^{ij} \ \bm{e}_i \otimes \bm{e}_j$}
 
 Además definimos un producto escalar entre dos tensores heredado del espacio del que prodece el espacio tensorial, de la siguiente forma:
 \lrg{\begin{equation}
-(\bm{e}_i \oplus \bm{e}_j) \bm{\cdot} (\bm{e}_k \oplus \bm{e}_l)=(\bm{e}_i \bm{\cdot} \bm{e}_k) (\bm{e}_j \bm{\cdot} \bm{e}_l)=g_{ik} \ g_{jl}
+(\bm{e}_i \otimes \bm{e}_j) \bm{\cdot} (\bm{e}_k \otimes \bm{e}_l)=(\bm{e}_i \bm{\cdot} \bm{e}_k) (\bm{e}_j \bm{\cdot} \bm{e}_l)=g_{ik} \ g_{jl}
 \end{equation}}
 Podemos además hacer el producto tensorial de dos vectores cualesquiera de \lrg{$V$} y el resultado será un tensor de \lrg{$\mathcal{T}$} de la siguiente forma:
 \lrg{\begin{equation}
-\bm{v} \oplus \bm{w} = (v^i \bm{e}_i) \oplus (w^j \bm{e}_j)= v^i w^j \ \bm{e}_i \oplus \bm{e}_j
+\bm{v} \otimes \bm{w} = (v^i \bm{e}_i) \otimes (w^j \bm{e}_j)= v^i w^j \ \bm{e}_i \otimes \bm{e}_j
 \end{equation}}
 Puesto que el producto tensorial es una operación bilineal.
 
 Para recuperar el significado anterior de forma multilineal lo definimos de la siguiente manera:
 \lrg{\begin{equation}\begin{split}
-\mathbb{T}(\bm{v},\bm{w}) & = \mathbb{T} \bm{\cdot} (\bm{v} \oplus \bm{w}) = \left[T^{ij} \ \bm{e}_i \oplus \bm{e}_j \right] \bm{\cdot} \left[(v^k \bm{e}_k) \oplus (w^l \bm{e}_l) \right]= \\ & = T^{ij} v^k w^l \ (\bm{e}_i \oplus \bm{e}_j) \bm{\cdot} (\bm{e}_k \oplus \bm{e}_l) = T^{ij} v^k g_{ik} w^l g_{jl} = \\ & = T^{ij} v_i w_j = T_{kl} v^k w^l
+\mathbb{T}(\bm{v},\bm{w}) & = \mathbb{T} \bm{\cdot} (\bm{v} \otimes \bm{w}) = \left[T^{ij} \ \bm{e}_i \otimes \bm{e}_j \right] \bm{\cdot} \left[(v^k \bm{e}_k) \otimes (w^l \bm{e}_l) \right]= \\ & = T^{ij} v^k w^l \ (\bm{e}_i \otimes \bm{e}_j) \bm{\cdot} (\bm{e}_k \otimes \bm{e}_l) = T^{ij} v^k g_{ik} w^l g_{jl} = \\ & = T^{ij} v_i w_j = T_{kl} v^k w^l
 \end{split}\end{equation}}
 En este caso, por como esta definido el tensor, vemos que al final hay que expresar los vectores como elementos del dual, o el tensor como uno covariante.
 \subsubsection{Transformación de tensores}
