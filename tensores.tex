@@ -87,6 +87,14 @@ Puesto que el producto tensorial es una operación bilineal.
 
 Para recuperar el significado anterior de forma multilineal lo definimos de la siguiente manera:
 \lrg{\begin{equation}\begin{split}
-      \mathbb{T}(\bm{v},\bm{w}) & = \mathbb{T} \bm{\cdot} (\bm{v} \oplus \bm{w}) = \left[T^{ij} \ \bm{e}_i \oplus \bm{e}_j \right] \bm{\cdot} \left[(v^k \bm{e}_k) \oplus (w^l \bm{e}_l) \right]= \\ & = T^{ij} v^k w^l \ (\bm{e}_i \oplus \bm{e}_j) \bm{\cdot} (\bm{e}_k \oplus \bm{e}_l) = T^{ij} v^k g_{ik} w^l g_{jl} = \\ & = T^{ij} v_i w_j = T_{kl} v^k w^l
+\mathbb{T}(\bm{v},\bm{w}) & = \mathbb{T} \bm{\cdot} (\bm{v} \oplus \bm{w}) = \left[T^{ij} \ \bm{e}_i \oplus \bm{e}_j \right] \bm{\cdot} \left[(v^k \bm{e}_k) \oplus (w^l \bm{e}_l) \right]= \\ & = T^{ij} v^k w^l \ (\bm{e}_i \oplus \bm{e}_j) \bm{\cdot} (\bm{e}_k \oplus \bm{e}_l) = T^{ij} v^k g_{ik} w^l g_{jl} = \\ & = T^{ij} v_i w_j = T_{kl} v^k w^l
 \end{split}\end{equation}}
 En este caso, por como esta definido el tensor, vemos que al final hay que expresar los vectores como elementos del dual, o el tensor como uno covariante.
+\subsubsection{Transformación de tensores}
+La propiedad más importante de un tensor es como se transforma durante cambios de base, que es en realidad la característica que los define
+\lrg{\begin{equation}\begin{matrix}
+\tensor*[]{(\mathbb{T}')}{^{i_1 \dots i_r}_{j_1 \dots j_s}}= T^{i_1}_{k_1} \dots T^{i_r}_{k_r} \ S^{l_1}_{j_1} \dots S^{l_r}_{j_r} \ \tensor*[]{\mathbb{T}}{^{k_1 \dots k_r}_{l_1 \dots l_s}} \\
+\tensor*[]{(\mathbb{T})}{^{i_1 \dots i_r}_{j_1 \dots j_s}}= S^{i_1}_{k_1} \dots S^{i_r}_{k_r} \ T^{l_1}_{j_1} \dots T^{l_r}_{j_r} \ \tensor*[]{(\mathbb{T}')}{^{k_1 \dots k_r}_{l_1 \dots l_s}}
+\end{matrix}\end{equation}}
+Dónde \lrg{$S$} es la matriz de cambio de base de la base nueva a la antigua y \lrg{$T$} al revés y su inversa.
+Es decir, las componentes contravariantes se transforman de forma contravariante y lo mismo para las covariantes.
