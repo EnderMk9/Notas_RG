@@ -3,27 +3,38 @@
 Antes de comenzar conviene explicar el \textbf{convenio de sumación de Einstein}, que nos va a permitir escribir expresiones de forma compacta que utilizando el símbolo de sumatorio, $\sum$, serían muy largas.
 
 Tomemos por ejemplo un vector $\vec{v}$ expresado en función de una base $e_i$, con componentes $v^i$, donde $i$ no es un exponente, sino un superíndice, esta elección es la clave del criterio.
-
-\[\vec{v}=\sum_{i=1}^n{v^i e_i}=\sum{v^i e_i}\equiv v^i e_i\]
-
+\[\bm{v}=\sum_{i=1}^n{v^i \bm{e}_i}=\sum{v^i \bm{e}_i}\equiv v^i \bm{e}_i\]
 Para poder aplicar el criterio tenemos que tener claro cuales son los posibles valores que puede tomar el índice, en este caso, desde 1 hasta la dimensión del espacio vectorial.
 
 La clave está en que cuando tenemos un superíndice y un súbindice iguales en un mismo término, esto indica una suma con respecto a ese índice, denominado \textbf{índice mudo}, porque solo indica la suma.
 
 Otro ejemplo es aplicado a formas bilineales o transformaciones lineales, los detalles se detallan posteriormente.
-\[\phi(\vec{v},\vec{w})=A_{ij} v^i w^j \;\;\;\;\; {f(\vec{v})}^j={M^j}_i v^i\]
+\[\phi(\bm{v},\bm{w})=A_{ij} v^i w^j \;\;\;\;\; {f(\bm{v})}^j={M^j}_i \ v^i\]
 Se observa también que en una ecuación los índices no mudos a ambos lados deben coincidir.
 \subsection{Covarianza y Contravarianza}
 Las componentes de un vector de un espacio vectorial $V$ se indican con un superíndice, mientras que los vectores de la base con un subíndice. Por el contrario, las componentes de un vector de $V^*$, el dual, se indican con un subíndice y la base dual se indica con superíndices.
 \subsubsection{Base Dual}
 \vspace{-25pt}
-\[e^i (e_j)= \delta^i_j\]
-Recordemos que la base dual se define de esta forma, donde $e^i$ son los vectores de la base dual, $e_j$ son los vectores de una base cualquiera de $V$, y $\delta^i_j$ es el delta de Kronecker, así pues si los indices son iguales el resultado será 1 y si son distintos será 0.
+\begin{Large}\begin{equation}
+\bm{e}^i (\bm{e}_j)= \delta^i_j
+\end{equation}\end{Large}
+Recordemos que la base dual se define de esta forma, donde $\bm{e}^i$ son los vectores de la base dual, $\bm{e}_j$ son los vectores de una base cualquiera de $V$, y $\delta^i_j$ es el delta de Kronecker, así pues si los indices son iguales el resultado será 1 y si son distintos será 0.
 \subsubsection{Métrica}
 De nuevo, recordemos que para medir distancias, recurrimos a un producto escalar, que define una métrica euclidea, de tal forma que
-\[|\vec{v}|=\sqrt{\phi(\vec{v},\vec{v})}=\sqrt{\vec{v}^t g \ \vec{v}}=\sqrt{g_{ij} v^i v^j}\]
-De tal forma que $g$ es una matriz que define al producto escalar que llamamos la métrica o el tensor métrico, y $g_{ij}$ son sus componentes, las cuales dependen de la base de los vectores.
+\begin{Large}\begin{equation}
+|\bm{v}|=\sqrt{\phi(\bm{v},\bm{v})}=\sqrt{g_{ij} v^i v^j}
+\end{equation}\end{Large}
+De tal forma que $g$ es una matriz que define al producto escalar que llamamos la métrica o el tensor métrico, y $g_{ij}$ son sus componentes, las cuales dependen de la base de los vectores, de la siguiente manera
+\begin{Large}\begin{equation}
+g_{ij} = \bm{e}_i \bm{\cdot} \bm{e}_j
+\end{equation}\end{Large}
+\vspace{-35pt}
 \subsubsection{Subir y bajar índices}
-En el caso $\R$, en el que trabajamos, podemos definir un isomorfismo entre $V$ y $V^*$ tal que $\vec{v}\mapsto \phi(-,\vec{v})$, dónde $\vec{v} \in V$ y $\phi(-,\vec{v})=g_{ij} v^i e^j$, donde $e^j$ es la base dual, así pues llegamos a
-\[v_j = g_{ij} v^i \;\;\;\;\; v^j = g^{ij} v_i \;\;\;\;\; g^{ij} = \left(g_{ij}\right)^{-1}\]
+En el caso $\R$, en el que trabajamos, podemos definir un isomorfismo entre $V$ y $V^*$ tal que $\bm{v}\mapsto \phi(\bm{v},-)$, dónde $\bm{v} \in V$ y $\phi(\bm{v},-)=g_{ij} v^i \bm{e^j}$, donde $\bm{e^j}$ es la base dual, así llegamos a
+\begin{large}\begin{equation}
+\begin{matrix}
+v_j = g_{ij} v^i && v^j = g^{ij} v_i \\
+\bm{e}_j = g_{ij} \bm{e}^i && \bm{e}^j = g^{ij} \bm{e}_i
+\end{matrix} \;\;\;\;\; g^{ij} = \left(g_{ij}\right)^{-1} \iff g^{ij} g_{jk} = \delta^i_k
+\end{equation}\end{large}
 Esto es muy importante pues nos permite pasar las coordendas de un vector de $V$ a $V^*$ y viceversa.
