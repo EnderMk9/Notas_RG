@@ -42,13 +42,13 @@ Esto es importante pues nos permite pasar las coordendas de un vector de \lrg{$V
 \subsubsection{Covarianza y Contravarianza}
 Los superíndices se denominan elementos \textbf{contravariantes}, mientras que los subíndices se denominan elementos \textbf{covariantes}. Esto indica como se transforman estos elementos cuando realizamos un cambio de base.
 
-Si tomamos dos bases de \lrg{$V$}, tenemos que \lrg{$({v'})^j = {S^j}_i \ v^i$}, mientras que para un elemento de \lrg{$V^*$}, si suponemos que esta en una base original y lo pasamos a una base nueva, como lo podemos interpretar como una transformación lineal desde un elemento de \lrg{$V$} hasta \lrg{$\R$}, para que cambiar de base otra, tenemos que multiplicar por la matriz de cambio de base de la base nueva a la antigua, que es la inversa de \lrg{$S$}, pues \lrg{$S$} es la matriz de cambio de base de la antigua a la nueva, así, llegamos a que \lrg{$(v')_j = {(S^{-1})_j}^i \ v_i$}.
+Si tomamos dos bases de \lrg{$V$}, tenemos que \lrg{$\tilde{v}^j = {S^j}_i \ v^i$}, mientras que para un elemento de \lrg{$V^*$}, si suponemos que esta en una base original y lo pasamos a una base nueva, como lo podemos interpretar como una transformación lineal desde un elemento de \lrg{$V$} hasta \lrg{$\R$}, para que cambiar de base otra, tenemos que multiplicar por la matriz de cambio de base de la base nueva a la antigua, que es la inversa de \lrg{$S$}, pues \lrg{$S$} es la matriz de cambio de base de la antigua a la nueva, así, llegamos a que \lrg{$\tilde{v}_j = {(S^{-1})_j}^i \ v_i$}.
 
 Así, los elementos covariantes y contravariantes, al realizar un cambio de base, se transforman de forma inversa.
 
 En el ejemplo que he mostrado se ve como como las componentes de un vector de \lrg{$V$} son contravariantes y las de un vector de \lrg{$V^*$} son covariantes.
 
-Otro ejemplo es por ejemplo las coordenadas de un vector de \lrg{$V$} en una base, que son contravariantes, y los vectores de una base expresados en otra, que son covariantes, puesto que si S es la matriz de cambio de la base vieja a la nueva, su inversa, la matriz de cambio de la base nueva a la vieja contiene como columnas a los vectores de la base nueva expresados en función de la base vieja, así tenemos \lrg{$(\bm{e}')_j = {(S^{-1})^i}_j \ \bm{e}_i$}.
+Otro ejemplo es por ejemplo las coordenadas de un vector de \lrg{$V$} en una base, que son contravariantes, y los vectores de una base expresados en otra, que son covariantes, puesto que si S es la matriz de cambio de la base vieja a la nueva, su inversa, la matriz de cambio de la base nueva a la vieja contiene como columnas a los vectores de la base nueva expresados en función de la base vieja, así tenemos \lrg{$\tilde{\bm{e}}_j = {(S^{-1})^i}_j \ \bm{e}_i$}.
 
 Si interpretamos \ref{1.4} como un cambio de base entonces también podemos observar esta misma naturaleza.
 \subsection{Definición de tensor}
@@ -93,8 +93,8 @@ En este caso, por como esta definido el tensor, vemos que al final hay que expre
 \subsubsection{Transformación de tensores}
 La propiedad más importante de un tensor es como se transforma durante cambios de base, que es en realidad la característica que los define
 \lrg{\begin{equation}\begin{matrix}
-\tensor*[]{(\mathbb{T}')}{^{i_1 \dots i_r}_{j_1 \dots j_s}}= T^{i_1}_{k_1} \dots T^{i_r}_{k_r} \ S^{l_1}_{j_1} \dots S^{l_r}_{j_r} \ \tensor*[]{\mathbb{T}}{^{k_1 \dots k_r}_{l_1 \dots l_s}} \\
-\tensor*[]{(\mathbb{T})}{^{i_1 \dots i_r}_{j_1 \dots j_s}}= S^{i_1}_{k_1} \dots S^{i_r}_{k_r} \ T^{l_1}_{j_1} \dots T^{l_r}_{j_r} \ \tensor*[]{(\mathbb{T}')}{^{k_1 \dots k_r}_{l_1 \dots l_s}}
+\tensor*[]{\tilde{\mathbb{T}}}{^{i_1 \dots i_r}_{j_1 \dots j_s}}= T^{i_1}_{k_1} \dots T^{i_r}_{k_r} \ S^{l_1}_{j_1} \dots S^{l_r}_{j_r} \ \tensor*[]{\mathbb{T}}{^{k_1 \dots k_r}_{l_1 \dots l_s}} \\
+\tensor*[]{\mathbb{T}}{^{i_1 \dots i_r}_{j_1 \dots j_s}}= S^{i_1}_{k_1} \dots S^{i_r}_{k_r} \ T^{l_1}_{j_1} \dots T^{l_r}_{j_r} \ \tensor*[]{\tilde{\mathbb{T}}}{^{k_1 \dots k_r}_{l_1 \dots l_s}}
 \end{matrix}\end{equation}}
 Dónde \lrg{$S$} es la matriz de cambio de base de la base nueva a la antigua y \lrg{$T$} al revés y su inversa.
 Es decir, las componentes contravariantes se transforman de forma contravariante y lo mismo para las covariantes.
