@@ -51,10 +51,13 @@ En el ejemplo que he mostrado se ve como como las componentes de un vector de \l
 Otro ejemplo es por ejemplo las coordenadas de un vector de \lrg{$V$} en una base, que son contravariantes, y los vectores de una base expresados en otra, que son covariantes, puesto que si S es la matriz de cambio de la base vieja a la nueva, su inversa, la matriz de cambio de la base nueva a la vieja contiene como columnas a los vectores de la base nueva expresados en función de la base vieja, así tenemos \lrg{$(\bm{e}')_j = {(S^{-1})^i}_j \ \bm{e}_i$}.
 
 Si interpretamos \ref{1.4} como un cambio de base entonces también podemos observar esta misma naturaleza.
-\subsection{Definición de tensor (i)}
-Un tensor puede definirse como una \textbf{forma multilinear} que manda elementos tanto de \lrg{$V$} como de \lrg{$V^*$} a \lrg{$\R$}, tal que:
+\subsection{Definición de tensor}
+\subsubsection{Como forma multilineal}
+Un tensor puede definirse como una \textbf{forma multilineal} que manda elementos tanto de \lrg{$V$} como de \lrg{$V^*$} a \lrg{$\R$}, tal que:
 \lrg{\[T: V^1 \times \dots \times V^k \rightarrow \R \;\;\;\; \; V^i = \{V\mbox{ o }V^*\}\]}
 En muchas ocasiones se colocan los \lrg{$V^*$} todos junto en la izquierda y el resto son \lrg{$V$}, de esta forma se habla de tensores \lrg{$(p,q)$}, donde \lrg{$p$} es el orden contravariante y \lrg{$q$} es el orden covariante.
+
+Es importante notal que no siempre tienen por que ir en este orden ni estar organizadas así las entradas del tensor, pueden estar mezcladas y en cualquier orden, pero este es el más común.
 
 Por ejemplo una forma bilineal, como he indicado antes, sería un tensor \lrg{$(0,2)$} que manda dos vectores de \lrg{$V$} a \lrg{$\R$}, y tiene la forma \lrg{$\phi(\bm{v},\bm{w})=A_{ij} v^i w^j$}, donde \lrg{$A_{ij}$} son las componentes del tensor, que podemos organizar en un \textit{array} de orden 2 (una matriz).
 
@@ -62,3 +65,28 @@ Otro ejemplo es un endomorfismo, que podemos interpretar como un tensor \lrg{$(1
 A las dos primeras expresiones se las denomina \textbf{contracción de un tensor}.
 
 En general las componentes de un tensor \lrg{$(p,q)$} pueden organizarse en un \textit{array} de orden \lrg{$p+q$}. Un tensor de orden total 0 es un escalar, uno de orden total 1 es un elemento de \lrg{$V$} o \lrg{$V^*$} y sus componentes se representan en una lista. Un tensor de orden total 2 puede ser una forma bilineal de \lrg{$V$} o \lrg{$V^*$} o un endomorfismo de \lrg{$V$} o \lrg{$V^*$}, y sus componentes se pueden representar en una matriz. Con \textit{vectores de matrices} o \textit{hipermatrices} para tensores de orden total 3 y así sucesivamente.
+
+
+\subsubsection{Como elemento de un Espacio Tensorial}
+
+Utilizando una operación llamada \textbf{producto tensorial}, podemos crear multitud de espacios vectoriales denominados espacios tensoriales haciento productos tensoriales de \lrg{$V$} y \lrg{$V^*$}.
+\lrg{\[\mathcal{T} = V^1 \otimes \dots \otimes V^k \;\;\;\; \; V^i = \{V\mbox{ o }V^*\}\]}
+Al igual que en el caso anterior podemos tener cualquier combinación, pero vamos a centrarnos en la siguiente y generalizaremos
+\lrg{\[\mathcal{T}=V \otimes V\]}
+En este caso, la base de \lrg{$\mathcal{T}$} serán los elementos abstractos \lrg{$\{\bm{e}_i \oplus \bm{e}_j\}$}, de los cuales en este caso habrá \lrg{$n^2$}. Entonces podremos expresar cualquier elemento \lrg{$\mathbb{T} \in \mathcal{T}$} como una combinación lineal de esa base, \lrg{$\mathbb{T} = T^{ij} \ \bm{e}_i \oplus \bm{e}_j$}
+
+Además definimos un producto escalar entre dos tensores heredado del espacio del que prodece el espacio tensorial, de la siguiente forma:
+\lrg{\begin{equation}
+(\bm{e}_i \oplus \bm{e}_j) \bm{\cdot} (\bm{e}_k \oplus \bm{e}_l)=(\bm{e}_i \bm{\cdot} \bm{e}_k) (\bm{e}_j \bm{\cdot} \bm{e}_l)=g_{ik} \ g_{jl}
+\end{equation}}
+Podemos además hacer el producto tensorial de dos vectores cualesquiera de \lrg{$V$} y el resultado será un tensor de \lrg{$\mathcal{T}$} de la siguiente forma:
+\lrg{\begin{equation}
+\bm{v} \oplus \bm{w} = (v^i \bm{e}_i) \oplus (w^j \bm{e}_j)= v^i w^j \ \bm{e}_i \oplus \bm{e}_j
+\end{equation}}
+Puesto que el producto tensorial es una operación bilineal.
+
+Para recuperar el significado anterior de forma multilineal lo definimos de la siguiente manera:
+\lrg{\begin{equation}\begin{split}
+      \mathbb{T}(\bm{v},\bm{w}) & = \mathbb{T} \bm{\cdot} (\bm{v} \oplus \bm{w}) = \left[T^{ij} \ \bm{e}_i \oplus \bm{e}_j \right] \bm{\cdot} \left[(v^k \bm{e}_k) \oplus (w^l \bm{e}_l) \right]= \\ & = T^{ij} v^k w^l \ (\bm{e}_i \oplus \bm{e}_j) \bm{\cdot} (\bm{e}_k \oplus \bm{e}_l) = T^{ij} v^k g_{ik} w^l g_{jl} = \\ & = T^{ij} v_i w_j = T_{kl} v^k w^l
+\end{split}\end{equation}}
+En este caso, por como esta definido el tensor, vemos que al final hay que expresar los vectores como elementos del dual, o el tensor como uno covariante.
