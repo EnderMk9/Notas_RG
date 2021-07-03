@@ -18,29 +18,29 @@ Las componentes de un vector de un espacio vectorial \lrg{$V$} se indican con un
 \lrg{\begin{equation}
 \bm{e}^i (\bm{e}_j)= \delta^i_j
 \end{equation}}
-Recordemos que la base dual se define de esta forma, donde \lrg{$\bm{e}^i$} son los vectores de la base dual, \lrg{$\bm{e}_j$} son los vectores de una base cualquiera de \lrg{$V$}, y \lrg{$\delta^i_j$} es el delta de Kronecker, así pues si los indices son iguales el resultado será 1 y si son distintos será 0.
+Recordemos que la \textbf{base dual} se define de esta forma, donde \lrg{$\bm{e}^i$} son los vectores de la base dual, \lrg{$\bm{e}_j$} son los vectores de una base cualquiera de \lrg{$V$}, y \lrg{$\delta^i_j$} es el \textbf{delta de Kronecker}, así pues si los indices son iguales el resultado será 1 y si son distintos será 0.
 \subsubsection{Métrica}
-De nuevo, recordemos que para medir distancias, recurrimos a un producto escalar, que define una métrica euclidea, de tal forma que
+De nuevo, recordemos que para medir distancias, recurrimos a un \textbf{producto escalar}, que define una métrica euclidea, de tal forma que
 \lrg{\begin{equation}
 |\bm{v}|=\sqrt{\phi(\bm{v},\bm{v})}=\sqrt{g_{ij} v^i v^j}
 \end{equation}}
-De tal forma que \lrg{$g$} es una matriz que define al producto escalar que llamamos la métrica o el tensor métrico, y \lrg{$g_{ij}$} son sus componentes, las cuales dependen de la base de los vectores, de la siguiente manera
+De tal forma que \lrg{$g$} es una matriz que define al producto escalar que llamamos la métrica o el \textbf{tensor métrico}, y \lrg{$g_{ij}$} son sus componentes, las cuales dependen de la base de los vectores, de la siguiente manera
 \lrg{\begin{equation}
 g_{ij} = \bm{e}_i \bm{\cdot} \bm{e}_j
 \end{equation}}
-\vspace{-35pt}
+Es de interés notar que en una base ortonormal, \lrg{$g_{ij}=\delta_{ij}$}, donde de nuevo, \lrg{$\delta_{ij}$} es el delta de Kronecker.
 \subsubsection{Subir y bajar índices}
 En el caso \lrg{$\R$}, en el que trabajamos, podemos definir un isomorfismo entre \lrg{$V$} y \lrg{$V^*$} tal que \lrg{$\bm{v}\mapsto \phi(\bm{v},-)$}, dónde \lrg{$\bm{v} \in V$} y \lrg{$\phi(\bm{v},-)=g_{ij} v^i \bm{e^j}$}, donde \lrg{$\bm{e^j}$} es la base dual, así llegamos a
 \lrg{\begin{equation}
 \begin{matrix}
-v_j = g_{ki} v^i && v^j = g^{ji} v_i \\
+v_j = g_{ji} v^i && v^j = g^{ji} v_i \\
 \bm{e}^j = g^{ji} \bm{e}_i && \bm{e}_j = g_{ji} \bm{e}^i
 \end{matrix} \;\;\;\;\; g^{ij} = \left(g_{ij}\right)^{-1} \iff g^{ij} g_{jk} = \delta^i_k
 \label{1.4}
 \end{equation}}
 Esto es importante pues nos permite pasar las coordendas de un vector de \lrg{$V$} a \lrg{$V^*$} y viceversa, o interpretar los elementos de \lrg{$V^*$} como elementos de \lrg{$V$}.
 \subsubsection{Covarianza y Contravarianza}
-Los superíndices se denominan elementos contravariantes, mientras que los subíndices se denominan elementos covariantes. Esto indica como se transforman estos elementos cuando realizamos un cambio de base.
+Los superíndices se denominan elementos \textbf{contravariantes}, mientras que los subíndices se denominan elementos \textbf{covariantes}. Esto indica como se transforman estos elementos cuando realizamos un cambio de base.
 
 Si tomamos dos bases de \lrg{$V$}, tenemos que \lrg{$({v'})^j = {S^j}_i \ v^i$}, mientras que para un elemento de \lrg{$V^*$}, si suponemos que esta en una base original y lo pasamos a una base nueva, como lo podemos interpretar como una transformación lineal desde un elemento de \lrg{$V$} hasta \lrg{$\R$}, para que cambiar de base otra, tenemos que multiplicar por la matriz de cambio de base de la base nueva a la antigua, que es la inversa de \lrg{$S$}, pues \lrg{$S$} es la matriz de cambio de base de la antigua a la nueva, así, llegamos a que \lrg{$(v')_j = {(S^{-1})_j}^i \ v_i$}.
 
@@ -49,3 +49,16 @@ Así, los elementos covariantes y contravariantes, al realizar un cambio de base
 En el ejemplo que he mostrado se ve como como las componentes de un vector de \lrg{$V$} son contravariantes y las de un vector de \lrg{$V^*$} son covariantes.
 
 Otro ejemplo es por ejemplo las coordenadas de un vector de \lrg{$V$} en una base, que son contravariantes, y los vectores de una base expresados en otra, que son covariantes, puesto que si S es la matriz de cambio de la base vieja a la nueva, su inversa, la matriz de cambio de la base nueva a la vieja contiene como columnas a los vectores de la base nueva expresados en función de la base vieja, así tenemos \lrg{$(\bm{e}')_j = {(S^{-1})^i}_j \ \bm{e}_i$}.
+
+Si interpretamos \ref{1.4} como un cambio de base entonces también podemos observar esta misma naturaleza.
+\subsection{Definición de tensor (i)}
+Un tensor puede definirse como una \textbf{forma multilinear} que manda elementos tanto de \lrg{$V$} como de \lrg{$V^*$} a \lrg{$\R$}, tal que:
+\lrg{\[T: V^1 \times \dots \times V^k \rightarrow \R \;\;\;\; \; V^i = \{V\mbox{ o }V^*\}\]}
+En muchas ocasiones se colocan los \lrg{$V^*$} todos junto en la izquierda y el resto son \lrg{$V$}, de esta forma se habla de tensores \lrg{$(p,q)$}, donde \lrg{$p$} es el orden contravariante y \lrg{$q$} es el orden covariante.
+
+Por ejemplo una forma bilineal, como he indicado antes, sería un tensor \lrg{$(0,2)$} que manda dos vectores de \lrg{$V$} a \lrg{$\R$}, y tiene la forma \lrg{$\phi(\bm{v},\bm{w})=A_{ij} v^i w^j$}, donde \lrg{$A_{ij}$} son las componentes del tensor, que podemos organizar en un \textit{array} de orden 2 (una matriz).
+
+Otro ejemplo es un endomorfismo, que podemos interpretar como un tensor \lrg{$(1,1)$} donde dejamos la entrada de \lrg{$V^*$} abierta o viceversa. Adoptaría la forma de \lrg{${f(-,\bm{w})}^j={M^j}_i \ w^i$}, \lrg{${f(\bm{v},-)}_j={M^i}_j \ v_i$} o \lrg{${f(\bm{v},\bm{w})}={M^i}_j \ v_i w^j$} (este último una forma bilineal mixta).
+A las dos primeras expresiones se las denomina \textbf{contracción de un tensor}.
+
+En general las componentes de un tensor \lrg{$(p,q)$} pueden organizarse en un \textit{array} de orden \lrg{$p+q$}. Un tensor de orden total 0 es un escalar, uno de orden total 1 es un elemento de \lrg{$V$} o \lrg{$V^*$} y sus componentes se representan en una lista. Un tensor de orden total 2 puede ser una forma bilineal de \lrg{$V$} o \lrg{$V^*$} o un endomorfismo de \lrg{$V$} o \lrg{$V^*$}, y sus componentes se pueden representar en una matriz. Con \textit{vectores de matrices} o \textit{hipermatrices} para tensores de orden total 3 y así sucesivamente.
