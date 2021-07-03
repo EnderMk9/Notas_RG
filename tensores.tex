@@ -8,7 +8,7 @@ Para poder aplicar el criterio tenemos que tener claro cuales son los posibles v
 
 La clave está en que cuando tenemos un superíndice y un súbindice iguales en un mismo término, esto indica una suma con respecto a ese índice, denominado \textbf{índice mudo}, porque solo indica la suma.
 
-Otro ejemplo es aplicado a formas bilineales o transformaciones lineales, los detalles se detallan posteriormente.
+Otro ejemplo es aplicado a formas bilineales o endomorfismos, los detalles se detallan posteriormente.
 \lrg{\[\phi(\bm{v},\bm{w})=A_{ij} v^i w^j \;\;\;\;\; {f(\bm{v})}^j={M^j}_i \ v^i\]}
 Se observa también que en una ecuación los índices no mudos a ambos lados deben coincidir.
 \subsection{Covarianza y Contravarianza}
@@ -33,8 +33,19 @@ g_{ij} = \bm{e}_i \bm{\cdot} \bm{e}_j
 En el caso \lrg{$\R$}, en el que trabajamos, podemos definir un isomorfismo entre \lrg{$V$} y \lrg{$V^*$} tal que \lrg{$\bm{v}\mapsto \phi(\bm{v},-)$}, dónde \lrg{$\bm{v} \in V$} y \lrg{$\phi(\bm{v},-)=g_{ij} v^i \bm{e^j}$}, donde \lrg{$\bm{e^j}$} es la base dual, así llegamos a
 \lrg{\begin{equation}
 \begin{matrix}
-v_j = g_{ij} v^i && v^j = g^{ij} v_i \\
-\bm{e}_j = g_{ij} \bm{e}^i && \bm{e}^j = g^{ij} \bm{e}_i
+v_j = g_{ki} v^i && v^j = g^{ji} v_i \\
+\bm{e}^j = g^{ji} \bm{e}_i && \bm{e}_j = g_{ji} \bm{e}^i
 \end{matrix} \;\;\;\;\; g^{ij} = \left(g_{ij}\right)^{-1} \iff g^{ij} g_{jk} = \delta^i_k
+\label{1.4}
 \end{equation}}
-Esto es muy importante pues nos permite pasar las coordendas de un vector de \lrg{$V$} a \lrg{$V^*$} y viceversa.
+Esto es importante pues nos permite pasar las coordendas de un vector de \lrg{$V$} a \lrg{$V^*$} y viceversa, o interpretar los elementos de \lrg{$V^*$} como elementos de \lrg{$V$}.
+\subsubsection{Covarianza y Contravarianza}
+Los superíndices se denominan elementos contravariantes, mientras que los subíndices se denominan elementos covariantes. Esto indica como se transforman estos elementos cuando realizamos un cambio de base.
+
+Si tomamos dos bases de \lrg{$V$}, tenemos que \lrg{$({v'})^j = {S^j}_i \ v^i$}, mientras que para un elemento de \lrg{$V^*$}, si suponemos que esta en una base original y lo pasamos a una base nueva, como lo podemos interpretar como una transformación lineal desde un elemento de \lrg{$V$} hasta \lrg{$\R$}, para que cambiar de base otra, tenemos que multiplicar por la matriz de cambio de base de la base nueva a la antigua, que es la inversa de \lrg{$S$}, pues \lrg{$S$} es la matriz de cambio de base de la antigua a la nueva, así, llegamos a que \lrg{$(v')_j = {(S^{-1})_j}^i \ v_i$}.
+
+Así, los elementos covariantes y contravariantes, al realizar un cambio de base, se transforman de forma inversa.
+
+En el ejemplo que he mostrado se ve como como las componentes de un vector de \lrg{$V$} son contravariantes y las de un vector de \lrg{$V^*$} son covariantes.
+
+Otro ejemplo es por ejemplo las coordenadas de un vector de \lrg{$V$} en una base, que son contravariantes, y los vectores de una base expresados en otra, que son covariantes, puesto que si S es la matriz de cambio de la base vieja a la nueva, su inversa, la matriz de cambio de la base nueva a la vieja contiene como columnas a los vectores de la base nueva expresados en función de la base vieja, así tenemos \lrg{$(\bm{e}')_j = {(S^{-1})^i}_j \ \bm{e}_i$}.
