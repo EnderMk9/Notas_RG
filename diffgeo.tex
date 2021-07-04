@@ -1,1 +1,22 @@
 \section{Geometría Diferencial}
+\subsection{Variedades}
+\begin{framed}
+Una \textbf{variedad} (\textbf{manifold}) es un \textbf{conjunto} \lrg{$\mathcal{M}$} de puntos, dotados de una \textbf{topología} \lrg{$\mathcal{O}$}, que es \textbf{homeomorfa} al \textbf{espacio euclideo} en un \textbf{entorno} de cada punto.
+\end{framed}
+
+Una \textbf{topología} \lrg{$\mathcal{O}$} es una \textbf{colección de subconjuntos} de \lrg{$\mathcal{M}$} tal que estan contenidos el propio \lrg{$\mathcal{M}$} y  el conjunto vacío \lrg{$\varnothing$}, que dados un número finito de elementos \lrg{$\mathcal{O}$}, su intersección también pertenece a \lrg{$\mathcal{O}$}, y que dados un número arbitrario de elementos de \lrg{$\mathcal{O}$}, su unión también pertenece a \lrg{$\mathcal{O}$}.
+
+Los elementos de \lrg{$\mathcal{O}$} se denominan \textbf{abiertos}. Así se define que una función \lrg{$f: A \subseteq (\mathcal{M},\mathcal{O}) \rightarrow \tilde{A} \subseteq(\tilde{\mathcal{M}},\tilde{\mathcal{O}})$} es contínua si tomado cualquier abierto de la imagen, su preimagen también es abierta.
+
+Y se dice que un espacio topológico es una \textbf{n-variedad} si \lrg{$\forall p \in \mathcal{M}$}, existe un \lrg{$U_p \in \mathcal{O}$} tal que existe una función \lrg{$f: U_p \rightarrow f(U_p) \subseteq \R^n$} invertible y contínua con respecto a \lrg{$\mathcal{O}$} en su dominio y con respecto a \lrg{$\mathcal{O}_S$} en su imagen.
+
+\lrg{$\mathcal{O}_S$} es la topología estandar de \lrg{$\R^n$}, que es la colección de todos los conjuntos \lrg{$U$} para los que \lrg{$\forall p \in U$} existe un \textbf{\textit{r}} tal que \lrg{$B_r(p) \subseteq U$}
+\lrg{\[B_r(p)=\left\{p \in R^n \mid \sum^n{(q_i-p_i)^2}<r^2\right\}\]}
+Nos interesan además las variedades diferenciables para poder definir los espacios tangentes y poder trabajar con el cálculo, como veremos posteriormente.
+
+No voy a centrarme en la definición rigurosa de este concepto, si el lector esta interesado puede ver \href{https://www.youtube.com/playlist?list=PLFeEvEPtX_0S6vxxiiNPrJbLu9aK1UVC_}{estas} lecturas por el \textbf{Dr. Frederic P. Schuller}, o \href{https://richie291.wixsite.com/theoreticalphysics/post/the-we-heraeus-international-winter-school-on-gravity-and-light}{estas} notas basadas en ellas por \textbf{Richie Dadhley}. Ahí se detallan con rigor estos conceptos, y se amplian.
+
+En general una variedad es una generalización de curvas, superficies, y demás, a cualquier dimensión y sin tener que estar contenidas a \lrg{$\R^n$}.
+
+\break
+\subsection{Espacios Tangentes}
